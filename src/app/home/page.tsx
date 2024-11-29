@@ -99,7 +99,7 @@ export default function Inicio() {
             <h2 className="text-2xl">
               Hola, <span className="font-bold">Andrés</span>
             </h2>
-            <h3 className="text-2xl font-semibold text-gray-500 mt-12">
+            <h3 className="text-2xl font-semibold text-gray-500 mt-8">
               Estado de tu cuenta
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-3 gap-x-8 mt-8">
