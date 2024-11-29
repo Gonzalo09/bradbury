@@ -102,7 +102,7 @@ export default function Inicio() {
             <h3 className="text-2xl font-semibold text-gray-500 mt-12">
               Estado de tu cuenta
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-3 gap-x-8 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-3 gap-x-8 mt-8">
               {CARD_DATA.map(
                 (card, index) =>
                   card && (

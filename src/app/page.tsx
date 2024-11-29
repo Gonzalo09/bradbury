@@ -1,13 +1,21 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const { push } = useRouter();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    push("/home");
+  };
+
   return (
     <main>
       <section className="bg-gray-50">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <img
             className="h-44 w-auto mb-4"
-            src="/BancoBradbury.webp"
+            src="/descarga.svg"
             alt="logo-banco"
           />
           <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
@@ -15,7 +23,11 @@ export default function Login() {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                 Iniciar sesión en tu cuenta
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                className="space-y-4 md:space-y-6"
+                onSubmit={handleSubmit}
+                noValidate
+              >
                 <div>
                   <label
                     htmlFor="user"
@@ -69,14 +81,12 @@ export default function Login() {
                     ¿Olvidaste tu contraseña?
                   </a>
                 </div>
-                <Link href="/home" passHref>
-                  <button
-                    type="button"
-                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center mt-5"
-                  >
-                    Iniciar sesión
-                  </button>
-                </Link>
+                <button
+                  type="submit"
+                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center mt-5"
+                >
+                  Iniciar sesión
+                </button>
                 <p className="text-sm font-light text-gray-500">
                   ¿No tenés una cuenta todavía?{" "}
                   <a
